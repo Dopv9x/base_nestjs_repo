@@ -11,7 +11,7 @@
 - [ ] Seeds
 - [x] Environment (development, test, staging, production)
 - [x] Express (DI, authz, utils, logging, response, error handling and example)
-- [ ] Batches
+- [x] Batches
 - [x] Folder structure
 - [x] Coding convention (eslint, prettier)
 - [ ] Unit test with jest
