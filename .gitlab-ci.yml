@@ -1,0 +1,26 @@
+image: node:16.14.2-buster-slim
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  untracked: true
+  paths:
+    - node_modules
+    - dist
+
+stages:
+  - lint
+  - build
+  # - deploy
+
+eslint:
+  stage: lint
+  script:
+    - yarn
+    - yarn lint
+
+build_development:
+  stage: build
+  script:
+    - yarn build
+  only:
+    - master
