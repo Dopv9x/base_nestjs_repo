@@ -18,11 +18,11 @@ async function bootstrap() {
   app.use(loggerMiddleware);
   app.useGlobalInterceptors(new ResponseTransformInterceptor());
   app.useGlobalPipes(new ValidationPipe(ValidationConfig));
-  app.setGlobalPrefix(configService.get<string>('apiPrefix' as never));
+  app.setGlobalPrefix(configService.get<string>('apiPrefix'));
 
   useContainer(app.select(ValidatorModule), { fallbackOnErrors: true });
 
-  const port = configService.get<number>('port' as never);
+  const port = configService.get<number>('port');
   await app.listen(port);
 }
 

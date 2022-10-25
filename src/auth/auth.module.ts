@@ -23,8 +23,7 @@ import { UserService } from '@src/users/user.service';
     }),
     TypeOrmModule.forFeature([UserRepository]),
   ],
-  providers: [AuthService, UserService, UserRepository],
+  providers: [AuthService, UserService],
   controllers: [AuthController],
-  exports: [UserRepository],
 })
 export class AuthModule {}
