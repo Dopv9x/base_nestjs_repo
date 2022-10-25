@@ -88,9 +88,6 @@ export class AuthService {
       lastName: currentUser.lastName,
       roles: currentUser.roles,
     };
-    // const access_token = await this.jwtService.signAsync(payload, {
-    //   expiresIn: this.configService.get<string>('jwtExpiresIn'),
-    // });
 
     return { ...payload, token: 'access_token' };
   }
