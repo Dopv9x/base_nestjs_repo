@@ -9,7 +9,7 @@ import { LoggerService } from '../logger/custom.logger';
 import { HttpArgumentsHost } from '@nestjs/common/interfaces/features/arguments-host.interface';
 import { Response } from 'express';
 import { QueryFailedError } from 'typeorm';
-import { ResponseTypeEnum } from '@src/enum/response-type.enum';
+import { ResponseTypeEnum } from '../../src/enum/response-type.enum';
 
 @Catch()
 export class AllExceptionFilter implements ExceptionFilter {

@@ -10,14 +10,14 @@ import { User } from '../users/user.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { UserInfo } from '@common/user-info';
+import { UserInfo } from '../../src/common/user-info';
 import { UserLoginDto } from './dto/user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserRepository } from '@src/users/user.repository';
-import { ApiError } from '@src/filter/api.error';
-import { Role } from '@src/enum/role.enum';
+import { UserRepository } from '../../src/users/user.repository';
+import { ApiError } from '../../src/filter/api.error';
+import { Role } from '../../src/enum/role.enum';
 import { plainToClass } from 'class-transformer';
-import { CreateUserDto } from '@src/users/dto/create-user.dto';
+import { CreateUserDto } from '../../src/users/dto/create-user.dto';
 
 @Injectable()
 export class AuthService {

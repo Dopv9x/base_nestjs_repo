@@ -15,15 +15,15 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "incremental": true,
-    "paths": {
-      "@config/*": ["src/config/*"],
-      "@common/*": ["src/common/*"],
-      "@constant/*": ["src/constant/*"],
-      "@validators/*": ["src/validators/*"],
-      "@utils/*": ["src/utils/*"],
-      "@middlewares/*": ["src/middlewares/*"],
-      "@src/*": ["src/*"]
-    }
+    // "paths": {
+    //   "../../src/config*": ["cosrc/nfig/*"],
+    //   "../../src/common/*": ["../../src/common/*"],
+    //   "../../src/constant/*": ["src/constant/*"],
+    //   "../../src/validators/*": ["src/validators/*"],
+    //   "../../src/utils/*": ["src/utils/*"],
+    //   "../../src/middlewares/*": ["src/middlewares/*"],
+    //   "../../src/*": ["src/*"]
+    // }
   },
   "lib": ["ES2019"]
 }

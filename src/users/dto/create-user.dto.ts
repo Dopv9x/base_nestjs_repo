@@ -5,8 +5,8 @@ import {
   Length,
   Validate,
 } from 'class-validator';
-import { PasswordConfirmValidator } from '@validators/password-confirm.validator';
-import { UniqueEmailValidator } from '@validators/unique-email.validator';
+import { PasswordConfirmValidator } from '../../../src/validators/password-confirm.validator';
+import { UniqueEmailValidator } from '../../../src/validators/unique-email.validator';
 
 export class CreateUserDto {
   @IsNotEmpty()

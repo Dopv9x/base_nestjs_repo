@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Exclude, Expose } from 'class-transformer';
-import { Role } from '@src/enum/role.enum';
+import { Role } from '../../src/enum/role.enum';
 import { IsEnum } from 'class-validator';
 
 @Entity({ name: 'users' })

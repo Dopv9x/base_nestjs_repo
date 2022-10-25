@@ -1,7 +1,7 @@
-import appConfig from '@config/app.config';
-import authConfig from '@config/auth.config';
-import databaseConfig from '@config/database.config';
-import { AuthMiddleware } from '@middlewares/auth.middleware';
+import appConfig from '../../src/configapp.config';
+import authConfig from '../../src/configauth.config';
+import databaseConfig from '../../src/configdatabase.config';
+import { AuthMiddleware } from '../../src/middlewares/auth.middleware';
 import {
   MiddlewareConsumer,
   Module,
@@ -13,8 +13,8 @@ import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ThrottlerBehindProxyGuard } from '@src/auth/guards/throttler-proxy.guard';
-import { ValidatorModule } from '@validators/validator.module';
+import { ThrottlerBehindProxyGuard } from '../../src/auth/guards/throttler-proxy.guard';
+import { ValidatorModule } from '../../src/validators/validator.module';
 import { AuthModule } from './auth/auth.module';
 import { DatabaseModule } from './database/database.module';
 import { AllExceptionFilter } from './filter/exception.filter';

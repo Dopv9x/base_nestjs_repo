@@ -1,4 +1,4 @@
-import { Role } from '@src/enum/role.enum';
+import { Role } from '../../src/enum/role.enum';
 import { Expose } from 'class-transformer';
 
 export class UserInfo {

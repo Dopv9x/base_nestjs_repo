@@ -10,7 +10,7 @@ import {
   Put,
   UseInterceptors,
 } from '@nestjs/common';
-import { User } from '@src/users/user.entity';
+import { User } from '../../src/users/user.entity';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { EntityId } from 'typeorm/repository/EntityId';
@@ -18,12 +18,12 @@ import { plainToClass } from 'class-transformer';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { DeleteResult } from 'typeorm/index';
 import { Query } from '@nestjs/common';
-import { Roles } from '@src/decorators/roles.decorator';
-import { Role } from '@src/enum/role.enum';
-import { AuthUser } from '@src/decorators/auth.user.decorator';
-import { UserInfo } from '@common/user-info';
-import { PageOptionsDto } from '@common/dto/pagination-options.dto';
-import { PageDto } from '@common/dto/pagination.dto';
+import { Roles } from '../../src/decorators/roles.decorator';
+import { Role } from '../../src/enum/role.enum';
+import { AuthUser } from '../../src/decorators/auth.user.decorator';
+import { UserInfo } from '../../src/common/user-info';
+import { PageOptionsDto } from '../../src/common/dto/pagination-options.dto';
+import { PageDto } from '../../src/common/dto/pagination.dto';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('users')

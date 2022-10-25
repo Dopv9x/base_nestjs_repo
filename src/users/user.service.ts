@@ -3,13 +3,13 @@ import { UserRepository } from './user.repository';
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { LoggerService } from '../logger/custom.logger';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Product } from '@src/product/product.entity';
-import { ProductRepository } from '@src/product/product.repository';
-import { PageMetaDto } from '@common/dto/pagination-meta.dto';
-import { BaseService } from '@utils/base.service';
-import { AuthService } from '@src/auth/auth.service';
-import { PageOptionsDto } from '@common/dto/pagination-options.dto';
-import { PageDto } from '@common/dto/pagination.dto';
+import { Product } from '../../src/product/product.entity';
+import { ProductRepository } from '../../src/product/product.repository';
+import { PageMetaDto } from '../../src/common/dto/pagination-meta.dto';
+import { BaseService } from '../../src/utils/base.service';
+import { AuthService } from '../../src/auth/auth.service';
+import { PageOptionsDto } from '../../src/common/dto/pagination-options.dto';
+import { PageDto } from '../../src/common/dto/pagination.dto';
 
 @Injectable()
 export class UserService extends BaseService<User, UserRepository> {
