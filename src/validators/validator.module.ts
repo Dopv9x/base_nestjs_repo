@@ -31,6 +31,7 @@ import { ProductRepository } from '@src/product/product.repository';
     UniqueEmailValidator,
     UserService,
     AuthService,
+    UserRepository,
   ],
   exports: [PasswordConfirmValidator, UniqueEmailValidator],
 })
