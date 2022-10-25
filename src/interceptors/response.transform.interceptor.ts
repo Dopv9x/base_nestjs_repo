@@ -7,7 +7,7 @@ import {
 import { IResponse } from './interface/IResponse';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ResponseTypeEnum } from '@src/enum/response-type.enum';
+import { ResponseTypeEnum } from '../enum/response-type.enum';
 
 @Injectable()
 export class ResponseTransformInterceptor<T>

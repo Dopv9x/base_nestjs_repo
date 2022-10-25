@@ -1,11 +1,7 @@
-import appConfig from '@config/app.config';
-import authConfig from '@config/auth.config';
-import databaseConfig from '@config/database.config';
-import { AuthMiddleware } from '@middlewares/auth.middleware';
 import {
-  MiddlewareConsumer,
   Module,
   NestModule,
+  MiddlewareConsumer,
   RequestMethod,
 } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -13,15 +9,19 @@ import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ThrottlerBehindProxyGuard } from '@src/auth/guards/throttler-proxy.guard';
-import { ValidatorModule } from '@validators/validator.module';
 import { AuthModule } from './auth/auth.module';
+import { ThrottlerBehindProxyGuard } from './auth/guards/throttler-proxy.guard';
+import appConfig from './config/app.config';
+import authConfig from './config/auth.config';
+import databaseConfig from './config/database.config';
 import { DatabaseModule } from './database/database.module';
 import { AllExceptionFilter } from './filter/exception.filter';
 import { LoggerModule } from './logger/logger.module';
+import { AuthMiddleware } from './middlewares/auth.middleware';
 import { ProductModule } from './product/product.module';
 import { SchedulesModule } from './schedules/schedules.module';
 import { UserRepository } from './users/user.repository';
+import { ValidatorModule } from './validators/validator.module';
 
 @Module({
   imports: [

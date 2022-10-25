@@ -1,6 +1,6 @@
-import { Order } from '@src/enum/order.enum';
 import { Type } from 'class-transformer';
 import { IsEnum, IsInt, IsOptional, Max, Min } from 'class-validator';
+import { Order } from '../../../src/enum/order.enum';
 
 export class PageOptionsDto {
   @IsEnum(Order)

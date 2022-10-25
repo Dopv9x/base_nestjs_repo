@@ -1,29 +1,29 @@
 import {
-  Body,
+  UseInterceptors,
   ClassSerializerInterceptor,
   Controller,
-  Delete,
   Get,
-  NotFoundException,
+  Query,
   Param,
+  NotFoundException,
   Post,
+  Body,
   Put,
-  UseInterceptors,
+  Delete,
 } from '@nestjs/common';
-import { User } from '@src/users/user.entity';
-import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { EntityId } from 'typeorm/repository/EntityId';
 import { plainToClass } from 'class-transformer';
+import { DeleteResult } from 'typeorm';
+import { EntityId } from 'typeorm/repository/EntityId';
+import { PageOptionsDto } from '../common/dto/pagination-options.dto';
+import { PageDto } from '../common/dto/pagination.dto';
+import { UserInfo } from '../common/user-info';
+import { AuthUser } from '../decorators/auth.user.decorator';
+import { Roles } from '../decorators/roles.decorator';
+import { Role } from '../enum/role.enum';
+import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { DeleteResult } from 'typeorm/index';
-import { Query } from '@nestjs/common';
-import { Roles } from '@src/decorators/roles.decorator';
-import { Role } from '@src/enum/role.enum';
-import { AuthUser } from '@src/decorators/auth.user.decorator';
-import { UserInfo } from '@common/user-info';
-import { PageOptionsDto } from '@common/dto/pagination-options.dto';
-import { PageDto } from '@common/dto/pagination.dto';
+import { User } from './user.entity';
+import { UserService } from './user.service';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('users')
@@ -33,7 +33,7 @@ export class UserController {
   @Get()
   @Roles(Role.Admin)
   async index(@Query() pageOptionsDto: PageOptionsDto): Promise<PageDto<User>> {
-    return await this.userService.findAllAndPaging(pageOptionsDto);
+    return this.userService.findAllAndPaging(pageOptionsDto);
   }
 
   @Get('/me')

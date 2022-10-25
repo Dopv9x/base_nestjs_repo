@@ -1,17 +1,17 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserRepository } from './user.repository';
-import { UserSubscriber } from './subscriber/user.subscriber';
+import { Module, forwardRef } from '@nestjs/common';
+import { ConfigService, ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from '@src/auth/guards/roles.guard';
-import { ProductRepository } from '@src/product/product.repository';
-import { UserService } from './user.service';
-import { UserController } from './user.controller';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { LoggerService } from '@src/logger/custom.logger';
-import { AuthModule } from '@src/auth/auth.module';
-import { AuthService } from '@src/auth/auth.service';
 import { JwtModule } from '@nestjs/jwt';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from '../auth/auth.module';
+import { AuthService } from '../auth/auth.service';
+import { RolesGuard } from '../auth/guards/roles.guard';
+import { LoggerService } from '../logger/custom.logger';
+import { ProductRepository } from '../product/product.repository';
+import { UserSubscriber } from './subscriber/user.subscriber';
+import { UserController } from './user.controller';
+import { UserRepository } from './user.repository';
+import { UserService } from './user.service';
 
 @Module({
   imports: [

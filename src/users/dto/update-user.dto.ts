@@ -5,7 +5,7 @@ import {
   Length,
   Validate,
 } from 'class-validator';
-import { PasswordConfirmValidator } from '@validators/password-confirm.validator';
+import { PasswordConfirmValidator } from '../../../src/validators/password-confirm.validator';
 
 export class UpdateUserDto {
   @IsOptional()

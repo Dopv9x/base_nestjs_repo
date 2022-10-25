@@ -1,17 +1,15 @@
 import {
-  IsBoolean,
-  IsEmail,
   IsNotEmpty,
-  Length,
+  IsEmail,
   Validate,
+  Length,
+  IsBoolean,
 } from 'class-validator';
-import { PasswordConfirmValidator } from '@validators/password-confirm.validator';
-import { UniqueEmailValidator } from '@validators/unique-email.validator';
+import { PasswordConfirmValidator } from '../../../src/validators/password-confirm.validator';
 
 export class CreateUserDto {
   @IsNotEmpty()
   @IsEmail()
-  @Validate(UniqueEmailValidator)
   email: string;
 
   @IsNotEmpty()

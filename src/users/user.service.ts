@@ -1,15 +1,15 @@
+import { Injectable, Inject, forwardRef } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { AuthService } from '../auth/auth.service';
+import { PageMetaDto } from '../common/dto/pagination-meta.dto';
+import { PageOptionsDto } from '../common/dto/pagination-options.dto';
+import { PageDto } from '../common/dto/pagination.dto';
+import { LoggerService } from '../logger/custom.logger';
+import { Product } from '../product/product.entity';
+import { ProductRepository } from '../product/product.repository';
+import { BaseService } from '../utils/base.service';
 import { User } from './user.entity';
 import { UserRepository } from './user.repository';
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { LoggerService } from '../logger/custom.logger';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Product } from '@src/product/product.entity';
-import { ProductRepository } from '@src/product/product.repository';
-import { PageMetaDto } from '@common/dto/pagination-meta.dto';
-import { BaseService } from '@utils/base.service';
-import { AuthService } from '@src/auth/auth.service';
-import { PageOptionsDto } from '@common/dto/pagination-options.dto';
-import { PageDto } from '@common/dto/pagination.dto';
 
 @Injectable()
 export class UserService extends BaseService<User, UserRepository> {

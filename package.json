@@ -31,8 +31,8 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/jwt": "^7.1.0",
     "@nestjs/platform-express": "^8.0.0",
-    "@nestjs/throttler": "^3.0.0",
     "@nestjs/schedule": "^2.1.0",
+    "@nestjs/throttler": "^3.0.0",
     "@nestjs/typeorm": "^7.1.0",
     "@types/bcrypt": "^3.0.0",
     "@types/node": "^18.7.5",
@@ -44,7 +44,7 @@
     "prettier": "^2.7.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4",
+    "rxjs": "^7",
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
@@ -85,7 +85,7 @@
       "node_modules",
       "src"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"

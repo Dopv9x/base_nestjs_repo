@@ -4,10 +4,10 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { ResponseTransformInterceptor } from './interceptors/response.transform.interceptor';
 import { ValidationPipe } from '@nestjs/common';
-import { ValidationConfig } from '@config/validation.config';
-import { useContainer } from 'class-validator';
-import { ValidatorModule } from '@validators/validator.module';
-import { loggerMiddleware } from '@middlewares/logger.middleware';
+import { useContainer } from 'typeorm';
+import { ValidationConfig } from './config/validation.config';
+import { loggerMiddleware } from './middlewares/logger.middleware';
+import { ValidatorModule } from './validators/validator.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {

@@ -2,8 +2,8 @@ import { Inject, Injectable, HttpStatus, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
 import { ConfigService } from '@nestjs/config';
 import * as jwt from 'jsonwebtoken';
-import { UserRepository } from '@src/users/user.repository';
-import { ApiError } from '@src/filter/api.error';
+import { ApiError } from '../filter/api.error';
+import { UserRepository } from '../users/user.repository';
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {
   @Inject()
@@ -14,8 +14,8 @@ export class AuthMiddleware implements NestMiddleware {
 
   async use(req: Request, res: Response, next: NextFunction) {
     const authHeaders = req.headers.authorization;
-    if (authHeaders && (authHeaders as string).split(' ')[1]) {
-      const token = (authHeaders as string).split(' ')[1];
+    if (authHeaders && authHeaders.split(' ')[1]) {
+      const token = authHeaders.split(' ')[1];
       try {
         const decoded: any = jwt.verify(token, this.config.get('jwtSecretKey'));
 

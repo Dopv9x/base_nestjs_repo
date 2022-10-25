@@ -14,16 +14,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": ".",
-    "incremental": true,
-    "paths": {
-      "@config/*": ["src/config/*"],
-      "@common/*": ["src/common/*"],
-      "@constant/*": ["src/constant/*"],
-      "@validators/*": ["src/validators/*"],
-      "@utils/*": ["src/utils/*"],
-      "@middlewares/*": ["src/middlewares/*"],
-      "@src/*": ["src/*"]
-    }
+    "incremental": true
   },
   "lib": ["ES2019"]
 }
